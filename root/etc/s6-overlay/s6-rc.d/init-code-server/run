@@ -29,3 +29,20 @@ chmod 700 /config/.ssh
 if [ -n "$(ls -A /config/.ssh)" ]; then
     chmod 600 /config/.ssh/*
 fi
+
+
+
+#============================
+# Modify on Fork
+#============================
+
+# SSH
+ssh-keygen -t rsa -C "abc@xyz.com" -P "" -f $HOME/.ssh/id_rsa
+
+# Git
+git config --global user.name Juliane
+git config --global user.email abc@xyz.com
+
+# Go
+mkdir -p ${GOPATH}/pkg
+mkdir -p ${GOPATH}/bin
